@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ca, R.drawable.cb, R.drawable.cc, R.drawable.cd,
                         R.drawable.da, R.drawable.db, R.drawable.dc, R.drawable.dd, R.drawable.de,
                         R.drawable.ea, R.drawable.eb, R.drawable.ec, R.drawable.ed,};  //카드의 앞면을 4장의 이미지를 이용해 랜덤 하게 표시하기 위한 곳
-
+    //int count = 0;
+    //int[] a = new int[22];
+    //int k = 0;
+    //double d = 0;
+    //int count = 0;
+    int count2 = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
             viewClickCheck[i] = false;
         }
 
+
         textViewOnClickListener();
+
+
 
         findViewById(R.id.re_start).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -83,11 +93,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private View.OnClickListener cardClick(final TextView textView) {
+        //a[0] = 23;
+
+        //count2 = count;
         return new View.OnClickListener() {
+
             @Override
+
             public void onClick(View view) {
-                //d = Math.random() * 22 -> 22장의 이미지를 랜덤 하게 표시하기 위한 것입니다.
-                //clickTextView = findViewById(view.getId()) -> 현재 클릭된  Textview의 아이디를 clickTextView에 저장 합니다.
+//                Random rand = new Random();
+//                k = 0;
+//                int c = rand.nextInt(21);
+//                for(int i = 0; i<22; i++) {
+//                    if(a[i] == c)
+//                        k++;
+////                    if (k>0) {
+////                        c = rand.nextInt(21);
+////                        k = 0;
+////                        continue;
+////                    }
+//                }
+//
+//                if(k==0) {
+//                    //count = count2;
+//                    a[count++] = c;
+//                    d = c;
+//                }
+//
+//                System.out.println(c);
+//                System.out.println(k);
+//                System.out.println(Arrays.toString(a));
+                //double e = Math.random() * 22;
+
                 final double d = Math.random() * 22;
                 clickTextView = findViewById(view.getId());
 
@@ -111,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 if (!viewClickCheck[Integer.parseInt(clickTextView.getText().toString()) - 1]) {
                                     clickTextView.setBackgroundResource(imagesources[(int) d]);
-                                    clickTextView.setTextColor(getResources().getColor(R.color.text_color));
+                                    //clickTextView.setTextColor(getResources().getColor(R.color.text_color));
                                     viewClickCheck[Integer.parseInt(clickTextView.getText().toString()) - 1] = true;
                                 } else {
                                     clickTextView.setBackgroundResource(R.drawable.card_back);
@@ -126,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }).start();
             }
+
         };
 
     }
