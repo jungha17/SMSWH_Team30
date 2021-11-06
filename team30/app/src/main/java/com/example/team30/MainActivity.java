@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 if (!viewClickCheck[Integer.parseInt(clickTextView.getText().toString()) - 1]) {
                                     clickTextView.setBackgroundResource(imagesources[(int) d]);
-                                    clickTextView.setTextColor(getResources().getColor(R.color.text_color));
+                                    //clickTextView.setTextColor(getResources().getColor(R.color.text_color));
                                     viewClickCheck[Integer.parseInt(clickTextView.getText().toString()) - 1] = true;
                                 } else {
                                     clickTextView.setBackgroundResource(R.drawable.card_back);
