@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        findViewById(R.id.re_start).setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                reViewInit();
-            }
-        });
+//        findViewById(R.id.re_start).setOnClickListener(new View.OnClickListener() {
+//            @Override public void onClick(View view) {
+//                reViewInit();
+//            }
+//        });
     }
 
     //cardText배열에 들어 있는 각각의 TextView에 setOnClickListener를 달아 줍니다.
