@@ -38,7 +38,14 @@ public class SubActivity extends AppCompatActivity {
         clickTextView = findViewById(R.id.image_23);
         clickTextView.setBackgroundResource(imagesources[(int) sub_d]);
 
-
+        clickTextView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent1 = new Intent(SubActivity.this, foodfinal.class);
+                intent1.putExtra("랜덤값", sub_d);
+                startActivity(intent1);
+            }
+        });
 
     }
 
