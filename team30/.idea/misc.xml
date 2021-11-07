@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23108108108108108" />
         <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23108108108108108" />
+        <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/layout/acac.xml" value="0.2179054054054054" />
         <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/layout/card_view.xml" value="0.25" />
+        <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/layout/foodfinal.xml" value="0.2179054054054054" />
+        <entry key="..\:/Users/SM/AndroidStudioProjects/team30/app/src/main/res/layout/subactivity_main.xml" value="0.22" />
       </map>
     </option>
   </component>

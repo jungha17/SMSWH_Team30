@@ -2,6 +2,7 @@ package com.example.team30;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -11,8 +12,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import android.content.Intent;
+import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
+
+//    public static Context context_main;
+//    public int d;
 
     private TextView[] cardText = new TextView[22];  //TextView의 아이디를 넣을 곳
     private TextView clickTextView;  //클릭된 카드의 숫자를 받아 오는 곳
@@ -30,11 +36,12 @@ public class MainActivity extends AppCompatActivity {
     //int k = 0;
     //double d = 0;
     //int count = 0;
-    int count2 = 0;
+    //int count2 = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         //1~4번까지 숫자를 listNum에 넣어 Collections.shuffle(listNum)를 이용해 무작위로 섞어 줍니다.
         for (int i = 1; i < 23; i++) {
@@ -91,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
         }
         textViewOnClickListener();
     }
-
+//    public static View.OnClickListener context_main;
+//    public int d;
     private View.OnClickListener cardClick(final TextView textView) {
         //a[0] = 23;
 
@@ -125,7 +133,20 @@ public class MainActivity extends AppCompatActivity {
 //                System.out.println(Arrays.toString(a));
                 //double e = Math.random() * 22;
 
-                final double d = Math.random() * 22;
+                Random random = new Random();
+                final int d = random.nextInt(22);
+                //final double d = random.nextDouble(22);
+                //final int d = Math.random() * 22;
+                System.out.println(d);
+
+                //int test_number = 100;
+                Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                intent.putExtra("랜덤값", d);
+
+
+
+                //context_main = this;
+
                 clickTextView = findViewById(view.getId());
 
                 //카드 클릭 시 회전하면 위쪽과 아래쪽 카드 모서리가 잘려서 돌게 됩니다.
@@ -162,6 +183,12 @@ public class MainActivity extends AppCompatActivity {
                                         .start();
                             }
                         }).start();
+
+                    //Intent intent1 = new Intent(getApplicationContext(), SubActivity.class);
+                    //startActivity(intent1);
+
+                startActivity(intent);
+
             }
 
         };
